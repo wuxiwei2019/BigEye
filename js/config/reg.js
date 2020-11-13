@@ -13,13 +13,34 @@ var reg =
         {"name":"base91","regStr": "^[^-\\\\']*[^-\\\\']$"},
         {"name":"base92","regStr": "^[^~]*[^~]$"}
     ],
-    "crypto":[
+    "encode":[
         {"name":"Brainfuck","regStr":"^[<>+-.,\\[\\]]*[<>+-.,\\[\\]]$"},
         {"name":"JsFuck","regStr":"^[()\\[\\]!+]*[()\\[\\]!+]$"},
         {"name":"JsOther","regStr":"^[!+()\\[\\]\\{\\}]*[!+()\\[\\]\\{\\}]$"},
-        {"name":"UUencode","regStr":"^[!-_ ]*[!-_ ]$"},
+        {"name":"Bubble Babble","regStr":"^x[a-z]{4}(-[a-z]{5})*(-[a-z]{4}x)$"},
         {"name":"TAPCode","regStr":"^([1-5]{2})*([1-5]{2})$"},
         {"name":"TAPCode2","regStr":"^(.{1,5} .{1,5}/)*(.{1,5} .{1,5})$"},
+        {"name":"Ook","regStr":"^[Ook?|Ook!|Ook\.|Ook? |Ook! |Ook\. |Ook\.\n]*[Ook?|Ook!|Ook\.]$"},
+        {"name":"OokShort","regStr":"^[\.!? ]*[\.!? ]$"},
+        {"name":"MorseCode","regStr":"^[-\./ ]*[-\./ ]$"},
+        {"name":"UUencode","regStr":"^[!-_ ]*[!-_ ]$"},
+        {"name":"XXencode","regStr":"^[A-Za-z0-9+-]*[A-Za-z0-9+-]$"},
+        {"name":"Quoted-printable","regStr":"^(=[0-9A-Fa-f]{2})*(=[0-9A-Fa-f]{2})$"},
+
+
+
+    ],
+    "crypto":[
+        {"name":"Bacon","regStr":"^([aAbB |aAbB]{5,6})*([aAbB]{5}$)"},
+        {"name":"D01248 云影密码","regStr":"^[01248]*[01248]$"},
+        {"name":"Phone 手机键盘","regStr":"^([1-3][1-9][01][ ]|[1-3][1-9][ ])*([1-3][1-9][01][ ]*|[1-3][1-9][ ]*)$"},
+        {"name":"Phone 手机键盘2","regStr":"^([2-9][1-4][ ]|[2-9][1-4])*([2-9][1-4][ ]*)$"},
+        {"name":"Phone 手机键盘3","regStr":"^([2-9]{1,6}[ ])*([2-9]{1,6}[ ]*)$"},
+        {"name":"Phone 手机键盘3","regStr":"^([2-9]{1,6}[ ])*([2-9]{1,6}[ ]*)$"},
+        {"name":"AES/DES/3DES/Rabbit/RC4","regStr":"^U2FsdGVkX1"},
+        {"name":"ADFGX 密码","regStr":"([ADFGX]{2})+"},
+        {"name":"ADFGVX 密码","regStr":"([ADFGVX]{2})+"},
+        {"name":"ROT47","regStr":"^[!-~]*[!-~]$"},
 
     ]
 }
