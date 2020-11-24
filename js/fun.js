@@ -2,16 +2,30 @@
 * @Author: Administrator
 * @Date:   2020-11-09 17:17:44
 * @Last Modified by:   Administrator
-* @Last Modified time: 2020-11-13 11:42:54
+* @Last Modified time: 2020-11-16 15:22:00
 */
 $(document).ready(function(){
     $("#btn_check").click(function(){
         inputText =  $("#inputCode").val();
+        revStr = $("#ck_reverse").val()
+        if(inputText == ""){
+            return;
+        }else if($("#ck_reverse").is(':checked')){
+            inputText = reverse(inputText);
+        }
         outputText = "<h5>你的输入内容是：</h5>" + inputText + "<br><h5>【识别的结果】：</h5>"
         console.log(inputText);
         $("#outputCode").val(outputText);
         check(inputText);
     });
+
+    // 将输入的内容进行倒序输出
+    function reverse(inputStr){
+        return inputStr.split("").reverse().join("");
+    }
+    
+
+    // 根据正则字典的大类进行匹配识别
     function addOuputText(reg){
         var reg_count = 0;
         var match_count = 0;
@@ -41,6 +55,8 @@ $(document).ready(function(){
         $("#outputCode").val($("#outputCode").val() + panel);
         $("#outputCode").html($("#outputCode").val() + "<br>");
     }
+
+    // 添加html模块头
     function addPanel_h(title){
         var panel_h = `
             <div class="panel panel-default">
@@ -51,6 +67,7 @@ $(document).ready(function(){
             `;
         refOutputText(panel_h);
     }
+    // 添加html模块尾
     function addPanel_e(){
         var panel_e =`
                 </div>
@@ -59,7 +76,7 @@ $(document).ready(function(){
         refOutputText(panel_e);
     }
 
-    // 代码识别函数
+    // 代码识别主函数
     function check(inputText){
         // 开始密码字符识别
         addPanel_h('加密字符串识别');
